@@ -1,0 +1,12 @@
+.wrapper {
+	padding-inline: toRem(15);
+	display: flex;
+	align-items: center;
+
+	img {
+		max-width: max(20px, 2vw);
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+}
