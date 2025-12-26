@@ -1,0 +1,14 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	overflow: clip;
+	min-height: 100%;
+	position: relative;
+}
+
+.main {
+	width: 100%;
+	@include adaptiveValue("padding", 50, 15);
+	max-width: toRem(1200);
+	margin: 0 auto;
+}

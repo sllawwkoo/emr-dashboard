@@ -3,9 +3,18 @@ import frontRoutes from "./frontRoutes";
 import DashboardPage from "@/pages/DashboardPage";
 import { PatientDetails, PatientsForm, PatientsPage } from "@/pages/Patients";
 import { DoctorDetails, DoctorsForm, DoctorsPage } from "@/pages/Doctors";
-import { AppointmentDetails, AppointmentsForm, AppointmentsPage } from "@/pages/Appointments";
+import {
+	AppointmentDetails,
+	AppointmentsForm,
+	AppointmentsPage,
+} from "@/pages/Appointments";
 import Page404 from "@/pages/Page404";
-
+import {
+	DashboardIcon,
+	PatientsIcon,
+	DoctorsIcon,
+	AppointmentsIcon,
+} from "@/layout/components/Icons";
 
 export const routes = [
 	{
@@ -17,7 +26,7 @@ export const routes = [
 				Component: DashboardPage,
 				meta: {
 					labelForMainMenu: "Дашборд",
-					// icon: "home-icon",
+					icon: DashboardIcon,
 				},
 			},
 			{
@@ -28,7 +37,7 @@ export const routes = [
 						Component: PatientsPage,
 						meta: {
 							labelForMainMenu: "Пацієнти",
-							icon: "patient-icon",
+							icon: PatientsIcon,
 						},
 					},
 					{
@@ -49,7 +58,7 @@ export const routes = [
 						Component: DoctorsPage,
 						meta: {
 							labelForMainMenu: "Лікарі",
-							icon: "doctor-icon",
+							icon: DoctorsIcon,
 						},
 					},
 					{
@@ -70,7 +79,7 @@ export const routes = [
 						Component: AppointmentsPage,
 						meta: {
 							labelForMainMenu: "Прийоми",
-							icon: "appointments-icon",
+							icon: AppointmentsIcon,
 						},
 					},
 					{

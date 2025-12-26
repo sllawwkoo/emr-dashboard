@@ -1,26 +1,53 @@
 :root {
 	// Шрифти
 	--font-roboto: "Roboto", sans-serif;
-	--font-shantell: "Shantell Sans", sans-serif;
-	--font-merriweather: "Merriweather", sans-serif;
-	--font-ubuntu: "Ubuntu", sans-serif;
 
-	--transition-fast: 0.2s ease-in-out;
-	--transition-base: 0.3s ease-in-out;
+	--transition-ease: 0.3s ease;
+	--transition-ease-in-out: 0.3s ease-in-out;
 
-	--transition-ease-fast: 0.2s ease;
-	--transition-ease-base: 0.3s ease;
+	--bg-main: #f5f8fc;
+	--bg-sidebar: #f1f6fb;
+	--bg-card: #ffffff;
+	--bg-hover: #e7eff8;
+	--bg-active: #dce9f8;
 
-	--turquoise-10: #c6ffff;
-	--turquoise-20: #3dfff8;
-	--turquoise-30: #44eae2;
-	--turquoise-40: #49dfd7;
-	--turquoise-50: #48cac4;
-	--turquoise-60: #42b1ab;
-	--turquoise-70: #37928d;
-	--turquoise-80: #29716d;
-	--turquoise-90: #194d4b;
-	--turquoise-100: #082a28;
-	--turquoise-100-8: rgba(8, 42, 40, 0.8);
-	--turquoise-110: #041b1a;
+	--primary: #0e2a47;
+	--primary-hover: #143b63;
+	--primary-soft: #e3ecf6;
+
+	--accent: #e53935;
+	--accent-hover: #c62828;
+	--accent-soft: #fdecec;
+
+	--text-main: #1c2430;
+	--text-muted: #6b7280;
+	--text-disabled: #a0a7b1;
+	--text-inverse: #ffffff;
+
+	--border: #dce6f2;
+	--divider: #e9eff6;
+}
+
+[data-theme="dark"] {
+	--bg-main: #0b1220;
+	--bg-sidebar: #0f1a2e;
+	--bg-card: #121c32;
+	--bg-hover: #1a2a44;
+	--bg-active: #223a66;
+
+	--primary: #4c78ff;
+	--primary-hover: #6a8dff;
+	--primary-soft: #1a2a4f;
+
+	--accent: #ff6b6b;
+	--accent-hover: #ff4c4c;
+	--accent-soft: #3a1a1a;
+
+	--text-main: #e6eaf2;
+	--text-muted: #9aa4b2;
+	--text-disabled: #667085;
+	--text-inverse: #0b1220;
+
+	--border: #1e2a44;
+	--divider: #18233a;
 }

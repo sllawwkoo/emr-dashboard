@@ -1,0 +1,10 @@
+.sidebar {
+	position: sticky;
+	top: 0;
+	max-height: 100svh;
+	background-color: var(--bg-sidebar);
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-block: 3vw;
+	transition: all var(--transition-ease);
+}

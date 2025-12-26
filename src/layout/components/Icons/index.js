@@ -8,6 +8,8 @@ import { PatientsIcon } from "./PatientsIcon";
 import { LoginIcon } from "./LoginIcon";
 import { ArrowLeftIcon } from "./ArrowLeftIcon";
 import { ArrowRightIcon } from "./ArrowRightIcon";
+import { MoonIcon } from "./MoonIcon";
+import { SunIcon } from "./SunIcon";
 
 export {
 	AddAppointmentIcon,
@@ -20,4 +22,6 @@ export {
 	LoginIcon,
 	ArrowLeftIcon,
 	ArrowRightIcon,
+	MoonIcon,
+	SunIcon,
 };

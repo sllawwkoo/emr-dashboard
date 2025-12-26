@@ -1,0 +1,100 @@
+/* ✅ Перемінні тем */
+[data-theme="light"] {
+	--slider-bg-color: #cbd5e1;
+	--thumb-bg: #ffffff;
+	--thumb-translate: 0px;
+	--sun-color: #f59e0b;
+	--moon-color: #94a3b8;
+}
+
+[data-theme="dark"] {
+	--slider-bg-color: #6366f1;
+	--thumb-bg: #ccd0d6;
+	--thumb-translate: 28px;
+	--sun-color: #f8f8f8;
+	--moon-color: #6366f1;
+}
+
+/* ✅ Контейнер */
+.switch {
+	position: relative;
+	width: 60px;
+	height: 30px;
+	display: inline-block;
+}
+
+/* Ховаємо реальний чекбокс */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* ✅ Слайдер */
+.slider {
+	position: absolute;
+	inset: 0;
+	border-radius: 999px;
+	background-color: var(--slider-bg-color);
+	transition: background-color 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 0;
+	padding-inline: 7px 6.5px;
+	box-sizing: border-box;
+}
+
+/* ✅ Кружечок (який їздить) */
+.slider::before {
+	content: "";
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background-color: var(--thumb-bg);
+	left: 3px;
+	top: 2px;
+	transform: translateX(var(--thumb-translate));
+	transition:
+		transform 0.3s ease,
+		background-color 0.3s ease;
+	z-index: 2;
+}
+
+/* ✅ Іконки всередині */
+.iconLeft,
+.iconRight {
+	position: relative;
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+	will-change: opacity, transform;
+}
+
+.iconLeft {
+	color: var(--sun-color);
+	opacity: 1;
+	transform: scale(1);
+}
+
+.iconRight {
+	color: var(--moon-color);
+	opacity: 0.8;
+	transform: scale(0.8);
+}
+
+/* ✅ Анімація: сонце "сідає", місяць "виїжджає" */
+.switch input:checked + .slider .iconLeft {
+	opacity: 0.8;
+	transform: scale(0.8);
+}
+
+.switch input:checked + .slider .iconRight {
+	opacity: 1;
+	transform: scale(1);
+}
