@@ -4,6 +4,7 @@
 	overflow: clip;
 	min-height: 100%;
 	position: relative;
+	background-color: var(--bg-layout);
 }
 
 .main {
@@ -11,4 +12,5 @@
 	@include adaptiveValue("padding", 50, 15);
 	max-width: toRem(1200);
 	margin: 0 auto;
+	
 }

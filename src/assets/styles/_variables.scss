@@ -1,53 +1,72 @@
+/* ===== COLORS (LIGHT THEME) ===== */
 :root {
-	// Шрифти
-	--font-roboto: "Roboto", sans-serif;
+/* ===== TRANSITIONS ===== */
+--tr-fast: 0.15s ease; /* hover, focus, tooltip */
+--tr-base: 0.25s ease; /* buttons, cards, rows */
+--tr-slow: 0.35s ease; /* layout, sidebar collapse, modals */
 
-	--transition-ease: 0.3s ease;
-	--transition-ease-in-out: 0.3s ease-in-out;
+  /* ===== BACKGROUNDS ===== */
+  --bg-layout: #f4f6f9;         /* app background */
+  --bg-sidebar: #e6ebf3;         /* sidebar background */
+  --bg-surface: #ffffff;         /* cards, forms, modals */
+  --bg-surface-soft: #f8fafc;    /* nested blocks */
 
-	--bg-main: #f5f8fc;
-	--bg-sidebar: #f1f6fb;
-	--bg-card: #ffffff;
-	--bg-hover: #e7eff8;
-	--bg-active: #dce9f8;
+  /* ===== LISTS / ITEMS ===== */
+  --bg-row: transparent;         /* list row default */
+  --bg-row-hover: #eef3f9;       /* list row hover */
+  --bg-row-selected: #e2ebf7;    /* selected / active row */
 
-	--primary: #0e2a47;
-	--primary-hover: #143b63;
-	--primary-soft: #e3ecf6;
+  /* ===== ACTIONS ===== */
+  --bg-button-primary: #0f2147;        /* primary action */
+  --bg-button-primary-hover: #1b3366;  /* primary hover */
+  --bg-button-danger: #d64550;         /* danger action */
+  --bg-button-danger-hover: #c2363c;   /* danger hover */
 
-	--accent: #e53935;
-	--accent-hover: #c62828;
-	--accent-soft: #fdecec;
+  /* ===== TEXT ===== */
+  --text-primary: #1f2937;        /* main text */
+  --text-secondary: #6b7280;      /* secondary text */
+  --text-disabled: #9ca3af;       /* disabled text */
+  --text-on-dark: #ffffff;        /* text on dark bg */
 
-	--text-main: #1c2430;
-	--text-muted: #6b7280;
-	--text-disabled: #a0a7b1;
-	--text-inverse: #ffffff;
+  /* ===== BORDERS ===== */
+  --border-default: #e1e6ee;      /* default border */
+  --border-soft: #edf1f7;         /* soft divider */
 
-	--border: #dce6f2;
-	--divider: #e9eff6;
+  /* ===== ACCENT ===== */
+  --accent-danger: #d64550;       /* brand red accent */
+  --accent-danger-soft: #fdebec;  /* soft danger bg */
 }
 
+/* ===== COLORS (DARK THEME) ===== */
 [data-theme="dark"] {
-	--bg-main: #0b1220;
-	--bg-sidebar: #0f1a2e;
-	--bg-card: #121c32;
-	--bg-hover: #1a2a44;
-	--bg-active: #223a66;
+  /* ===== BACKGROUNDS ===== */
+ 	--bg-layout: #111318;           /* app background */
+	--bg-sidebar: #1b2030;         /* sidebar background */
+  --bg-surface: #1b2233;          /* cards, forms, modals */
+  --bg-surface-soft: #21293d;     /* nested blocks */
 
-	--primary: #4c78ff;
-	--primary-hover: #6a8dff;
-	--primary-soft: #1a2a4f;
+  /* ===== LISTS / ITEMS ===== */
+  --bg-row: transparent;          /* list row default */
+  --bg-row-hover: #242d44;        /* list row hover */
+  --bg-row-selected: #2e3a5c;     /* selected / active row */
 
-	--accent: #ff6b6b;
-	--accent-hover: #ff4c4c;
-	--accent-soft: #3a1a1a;
+  /* ===== ACTIONS ===== */
+  --bg-button-primary: #5a7ae0;        /* primary action */
+  --bg-button-primary-hover: #6b8bff;  /* primary hover */
+  --bg-button-danger: #ff6b6b;         /* danger action */
+  --bg-button-danger-hover: #ff5252;   /* danger hover */
 
-	--text-main: #e6eaf2;
-	--text-muted: #9aa4b2;
-	--text-disabled: #667085;
-	--text-inverse: #0b1220;
+  /* ===== TEXT ===== */
+  --text-primary: #e5e7eb;        /* main text */
+  --text-secondary: #9ca3af;      /* secondary text */
+  --text-disabled: #6b7280;       /* disabled text */
+  --text-on-dark: #0f1218;        /* text on dark bg */
 
-	--border: #1e2a44;
-	--divider: #18233a;
+  /* ===== BORDERS ===== */
+  --border-default: #26304a;      /* default border */
+  --border-soft: #2f3a56;         /* soft divider */
+
+  /* ===== ACCENT ===== */
+  --accent-danger: #ff6b6b;       /* brand red accent */
+  --accent-danger-soft: #3a1d22;  /* soft danger bg */
 }

@@ -6,7 +6,7 @@ function MainLayout() {
 	return (
 		<div className={styles.wrapper}>
 			<Sidebar />
-			<main>
+			<main className={styles.main}>
 				<Outlet />
 			</main>
 		</div>
