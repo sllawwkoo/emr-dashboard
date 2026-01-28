@@ -1,0 +1,58 @@
+.selectWrapper {
+	margin-bottom: toRem(14);
+}
+
+.selectLabel {
+	display: block;
+	margin-bottom: toRem(6);
+}
+
+.select {
+	width: 100%;
+	padding: toRem(10) toRem(12);
+	border-radius: toRem(8);
+	border: toRem(1) solid #cbd5e1;
+	outline: none;
+	transition:
+		border-color var(--transition-ease-base),
+		box-shadow var(--transition-ease-base);
+	background-color: #ffffff;
+	color: #334155;
+
+	/* Hover */
+	&:hover:not(.disabledInput):not(.error) {
+		border-color: #94a3b8;
+	}
+
+	/* Focus */
+	&:focus {
+		border-color: #3b82f6;
+		box-shadow: 0 0 0 toRem(3) rgba(59, 130, 246, 0.2);
+	}
+
+	/* Disabled */
+	&.disabledInput {
+		background-color: #f1f5f9;
+		border-color: #cbd5e1;
+		color: #94a3b8;
+		cursor: not-allowed;
+	}
+}
+
+/* Multiple select — правильний селектор */
+.multiple {
+	min-height: toRem(120);
+}
+
+/* Error state */
+.error {
+	border-color: #e11d48 !important;
+	box-shadow: 0 0 0 toRem(3) rgba(225, 29, 72, 0.15);
+}
+
+/* Error message */
+.errorMessage {
+	margin-top: toRem(4);
+	color: #e11d48;
+	font-size: toRem(12);
+}
