@@ -20,8 +20,8 @@ const itemsForMainMenu = getItemsForMainMenu(routes, '')
 							to={path}
 							icon={icon}
 							label={label}
-							collapsed={collapsed}
-							isMobile={isMobile}
+							// collapsed={collapsed}
+							// isMobile={isMobile}
 							className={({ isActive }) => (isActive ? styles.active : "")}
 						/>
 					</li>

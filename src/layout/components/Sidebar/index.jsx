@@ -12,10 +12,10 @@ function Sidebar() {
 			<Logo />
 			<MainMenu />
 			<CreateActions />
-			<ThemeSwitcher />
-			<AuthEntry />
 			<ArrowLeftIcon/>
 			<ArrowRightIcon/>
+			<AuthEntry />
+			<ThemeSwitcher />
 		</aside>
 	);
 }
