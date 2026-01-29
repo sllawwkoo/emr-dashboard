@@ -1,34 +1,29 @@
 import { getItemsForMainMenu } from "@/layout/navigation/utils";
 import { routes } from "@/routes/routes";
-import styles from "./MainMenu.module.scss";
-import { NavLink } from "react-router";
 import SidebarAction from "../SidebarAction";
+import styles from "./MainMenu.module.scss";
 
-function MainMenu() {
-const itemsForMainMenu = getItemsForMainMenu(routes, '')
+function MainMenu({ collapsed }) {
+  const items = getItemsForMainMenu(routes, "");
 
-	return (
-		<nav className={styles.menu}>
-			<ul className={styles.menu_list}>
-				{itemsForMainMenu.map(({ path, label, icon }, index) => (
-					<li
-						key={index}
-						className={styles.menu_item}
-						>
-						<SidebarAction 
-							as={NavLink}
-							to={path}
-							icon={icon}
-							label={label}
-							// collapsed={collapsed}
-							// isMobile={isMobile}
-							className={({ isActive }) => (isActive ? styles.active : "")}
-						/>
-					</li>
-				))}
-			</ul>
-		</nav>
-	);
+  return (
+    <nav className={styles.menu} aria-label="Головне меню">
+      <ul className={styles.list}>
+        {items.map(({ path, label, icon }, i) => (
+          <li key={path || i} className={styles.item}>
+            <SidebarAction
+              to={path}
+              end={path === "/"}
+              icon={icon}
+              label={label}
+              collapsed={collapsed}
+              activeClassName={styles.active}
+            />
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }
 
 export default MainMenu;

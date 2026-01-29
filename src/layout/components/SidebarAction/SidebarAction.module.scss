@@ -37,6 +37,10 @@
 }
 
 /* COLLAPSED */
+.collapsed {
+  justify-content: center;
+}
+
 .collapsed .label {
   opacity: 0;
   transform: translateX(-6px);

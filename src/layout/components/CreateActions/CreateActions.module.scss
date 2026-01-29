@@ -1,0 +1,21 @@
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: toRem(2);
+}
+
+.item {
+  display: block;
+}
+
+.active {
+  background-color: var(--bg-row-selected) !important;
+}

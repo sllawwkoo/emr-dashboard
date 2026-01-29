@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(8);
+  padding-inline: toRem(12);
+  padding-top: toRem(12);
+  margin-top: auto;
+  flex-shrink: 0;
+  border-top: 1px solid var(--border-soft);
+}

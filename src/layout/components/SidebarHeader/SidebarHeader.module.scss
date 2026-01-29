@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: toRem(8);
+  padding-inline: toRem(12);
+  padding-bottom: toRem(12);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border-soft);
+
+  &.collapsed {
+    .logoWrap {
+      display: none;
+    }
+
+    .toggle {
+      margin-inline: auto;
+    }
+  }
+}
+
+.logoWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: toRem(36);
+  height: toRem(36);
+  padding: 0;
+  border: none;
+  border-radius: toRem(8);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color var(--tr-fast);
+
+  &:hover {
+    background-color: var(--color-hover);
+  }
+}
+
+.toggleIcon {
+  flex-shrink: 0;
+}

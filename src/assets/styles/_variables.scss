@@ -2,110 +2,154 @@
 
 /* ===== LIGHT THEME (ROOT) ===== */
 :root {
-	/* ===== FONTS ===== */
-	--font-roboto: "Roboto", sans-serif;
+  /* ===== FONTS ===== */
+  --font-roboto: "Roboto", sans-serif;
 
-	/* ===== TRANSITIONS ===== */
-	--tr-fast: 0.15s ease; /* hover, focus, tooltip */
-	--tr-base: 0.25s ease; /* buttons, cards, rows */
-	--tr-slow: 0.35s ease; /* layout, sidebar collapse, modals */
+  /* ===== TRANSITIONS ===== */
+  --tr-fast: 0.15s ease;
+  /* hover, focus, tooltip */
+  --tr-base: 0.25s ease;
+  /* buttons, cards, rows */
+  --tr-slow: 0.35s ease;
+  /* layout, sidebar collapse, modals */
 
-	/* ===== BRAND ===== */
-	--brand-primary: #0f2147; /* navy from logo */
-	--brand-primary-hover: #1b3366;
-	--brand-accent: #e52331; /* red wave from logo */
-	--brand-accent-hover: #c71c2b;
+  /* ===== BRAND ===== */
+  --brand-primary: #0f2147;
+  /* navy from logo */
+  --brand-primary-hover: #1b3366;
+  --brand-accent: #e52331;
+  /* red wave from logo */
+  --brand-accent-hover: #c71c2b;
 
-	/* ===== BACKGROUNDS ===== */
-	--bg-main: #f4f6f9; /* app background (used on body) */
-	--bg-layout: #f4f6f9; /* app background */
-	--bg-sidebar: #e6ebf3; /* sidebar background */
-	--bg-surface: #ffffff; /* cards, forms, modals */
-	--bg-surface-soft: #f8fafc; /* nested blocks */
+  /* ===== BACKGROUNDS ===== */
+  --bg-main: #f4f6f9;
+  /* app background (used on body) */
+  --bg-layout: #f4f6f9;
+  /* app background */
+  --bg-sidebar: #e6ebf3;
+  /* sidebar background */
+  --bg-surface: #ffffff;
+  /* cards, forms, modals */
+  --bg-surface-soft: #f8fafc;
+  /* nested blocks */
 
-	/* ===== LISTS / ITEMS ===== */
-	--bg-row: transparent; /* list row default */
-	--bg-row-hover: #eef3f9; /* list row hover */
-	--bg-row-selected: #e2ebf7; /* selected / active row */
+  /* ===== LISTS / ITEMS ===== */
+  --bg-row: transparent;
+  /* list row default */
+  --bg-row-hover: #eef3f9;
+  /* list row hover */
+  --bg-row-selected: #e2ebf7;
+  /* selected / active row */
 
-	/* ===== ACTIONS / BUTTONS ===== */
-	--bg-button-primary: var(--brand-primary);
-	--bg-button-primary-hover: var(--brand-primary-hover);
-	--bg-button-danger: var(--brand-accent);
-	--bg-button-danger-hover: var(--brand-accent-hover);
+  /* ===== ACTIONS / BUTTONS ===== */
+  --bg-button-primary: var(--brand-primary);
+  --bg-button-primary-hover: var(--brand-primary-hover);
+  --bg-button-danger: var(--brand-accent);
+  --bg-button-danger-hover: var(--brand-accent-hover);
 
-	/* ===== TEXT ===== */
-	--text-primary: #1f2937; /* main text */
-	--text-secondary: #6b7280; /* secondary text */
-	--text-disabled: #9ca3af; /* disabled text */
-	--text-on-dark: #ffffff; /* text on dark bg / buttons */
+  /* ===== TEXT ===== */
+  --text-primary: #1f2937;
+  /* main text */
+  --text-secondary: #6b7280;
+  /* secondary text */
+  --text-disabled: #9ca3af;
+  /* disabled text */
+  --text-on-dark: #ffffff;
+  /* text on dark bg / buttons */
 
-	/* ===== BORDERS ===== */
-	--border-default: #e1e6ee; /* default border */
-	--border-soft: #edf1f7; /* soft divider */
+  /* ===== BORDERS ===== */
+  --border-default: #e1e6ee;
+  /* default border */
+  --border-soft: #edf1f7;
+  /* soft divider */
 
-	/* ===== STATUS ===== */
-	--status-success-bg: #ecfdf3;
-	--status-success-border: #bbf7d0;
-	--status-success-text: #166534;
+  /* ===== STATUS ===== */
+  --status-success-bg: #ecfdf3;
+  --status-success-border: #bbf7d0;
+  --status-success-text: #166534;
 
-	--status-warning-bg: #fffbeb;
-	--status-warning-border: #fed7aa;
-	--status-warning-text: #92400e;
+  --status-warning-bg: #fffbeb;
+  --status-warning-border: #fed7aa;
+  --status-warning-text: #92400e;
 
-	--status-error-bg: #fef2f2;
-	--status-error-border: #fecaca;
-	--status-error-text: #b91c1c;
+  --status-error-bg: #fef2f2;
+  --status-error-border: #fecaca;
+  --status-error-text: #b91c1c;
 
-	/* ===== ACCENTS ===== */
-	--accent-danger: var(--brand-accent);
-	--accent-danger-soft: #fdebec;
+  /* ===== ACCENTS ===== */
+  --accent-danger: var(--brand-accent);
+  --accent-danger-soft: #fdebec;
+
+  /* ===== SIDEBAR ACTION (aliases) ===== */
+  --color-text: var(--text-primary);
+  --color-hover: var(--bg-row-hover);
+  --color-tooltip-bg: var(--bg-surface);
+  --color-tooltip-text: var(--text-primary);
 }
 
 /* ===== DARK THEME ===== */
 [data-theme="dark"] {
-	/* ===== BACKGROUNDS ===== */
-	--bg-main: #111318;
-	--bg-layout: #111318; /* app background */
-	--bg-sidebar: #1b2030; /* sidebar background */
-	--bg-surface: #1b2233; /* cards, forms, modals */
-	--bg-surface-soft: #21293d; /* nested blocks */
+  /* ===== BACKGROUNDS ===== */
+  --bg-main: #111318;
+  --bg-layout: #111318;
+  /* app background */
+  --bg-sidebar: #1b2030;
+  /* sidebar background */
+  --bg-surface: #1b2233;
+  /* cards, forms, modals */
+  --bg-surface-soft: #21293d;
+  /* nested blocks */
 
-	/* ===== LISTS / ITEMS ===== */
-	--bg-row: transparent; /* list row default */
-	--bg-row-hover: #242d44; /* list row hover */
-	--bg-row-selected: #2e3a5c; /* selected / active row */
+  /* ===== LISTS / ITEMS ===== */
+  --bg-row: transparent;
+  /* list row default */
+  --bg-row-hover: #242d44;
+  /* list row hover */
+  --bg-row-selected: #2e3a5c;
+  /* selected / active row */
 
-	/* ===== ACTIONS / BUTTONS ===== */
-	--bg-button-primary: #5a7ae0; /* primary action */
-	--bg-button-primary-hover: #6b8bff; /* primary hover */
-	--bg-button-danger: #ff6b6b; /* danger action */
-	--bg-button-danger-hover: #ff5252; /* danger hover */
+  /* ===== ACTIONS / BUTTONS ===== */
+  --bg-button-primary: #5a7ae0;
+  /* primary action */
+  --bg-button-primary-hover: #6b8bff;
+  /* primary hover */
+  --bg-button-danger: #ff6b6b;
+  /* danger action */
+  --bg-button-danger-hover: #ff5252;
+  /* danger hover */
 
-	/* ===== TEXT ===== */
-	--text-primary: #e5e7eb; /* main text */
-	--text-secondary: #9ca3af; /* secondary text */
-	--text-disabled: #6b7280; /* disabled text */
-	--text-on-dark: #ffffff; /* text on dark bg / buttons */
+  /* ===== TEXT ===== */
+  --text-primary: #e5e7eb;
+  /* main text */
+  --text-secondary: #9ca3af;
+  /* secondary text */
+  --text-disabled: #6b7280;
+  /* disabled text */
+  --text-on-dark: #ffffff;
+  /* text on dark bg / buttons */
 
-	/* ===== BORDERS ===== */
-	--border-default: #26304a; /* default border */
-	--border-soft: #2f3a56; /* soft divider */
+  /* ===== BORDERS ===== */
+  --border-default: #26304a;
+  /* default border */
+  --border-soft: #2f3a56;
+  /* soft divider */
 
-	/* ===== STATUS ===== */
-	--status-success-bg: #052e16;
-	--status-success-border: #166534;
-	--status-success-text: #bbf7d0;
+  /* ===== STATUS ===== */
+  --status-success-bg: #052e16;
+  --status-success-border: #166534;
+  --status-success-text: #bbf7d0;
 
-	--status-warning-bg: #451a03;
-	--status-warning-border: #f97316;
-	--status-warning-text: #fed7aa;
+  --status-warning-bg: #451a03;
+  --status-warning-border: #f97316;
+  --status-warning-text: #fed7aa;
 
-	--status-error-bg: #3a1d22;
-	--status-error-border: #fb7185;
-	--status-error-text: #fecaca;
+  --status-error-bg: #3a1d22;
+  --status-error-border: #fb7185;
+  --status-error-text: #fecaca;
 
-	/* ===== ACCENTS ===== */
-	--accent-danger: #ff6b6b; /* brand red accent */
-	--accent-danger-soft: #3a1d22; /* soft danger bg */
+  /* ===== ACCENTS ===== */
+  --accent-danger: #ff6b6b;
+  /* brand red accent */
+  --accent-danger-soft: #3a1d22;
+  /* soft danger bg */
 }
