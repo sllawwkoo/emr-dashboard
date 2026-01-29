@@ -3,28 +3,20 @@ import ImageLogo from "@/assets/img/logo.png";
 import frontRoutes from "@/routes/frontRoutes";
 import styles from "./Logo.module.scss";
 
-function Logo() {
-	const location = useLocation();
-	const isDashboardPage = location.pathname === "/";
+function Logo({ collapsed }) {
+  const location = useLocation();
+  const isDashboardPage = location.pathname === "/";
+  const wrapperClass = `${styles.wrapper}${collapsed ? ` ${styles.collapsed}` : ""}`;
 
-	return isDashboardPage ? (
-		<div className={styles.wrapper}>
-			<img
-				src={ImageLogo}
-				alt="Logo"
-			/>
-		</div>
-	) : (
-		<Link
-			to={frontRoutes.navigate.dashboard}
-			className={styles.wrapper}
-		>
-			<img
-				src={ImageLogo}
-				alt="Logo"
-			/>
-		</Link>
-	);
+  return isDashboardPage ? (
+    <div className={wrapperClass}>
+      <img src={ImageLogo} alt="Logo" />
+    </div>
+  ) : (
+    <Link to={frontRoutes.navigate.dashboard} className={wrapperClass}>
+      <img src={ImageLogo} alt="Logo" />
+    </Link>
+  );
 }
 
 export default Logo;

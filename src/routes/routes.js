@@ -4,98 +4,99 @@ import DashboardPage from "@/pages/DashboardPage";
 import { PatientDetails, PatientsForm, PatientsPage } from "@/pages/Patients";
 import { DoctorDetails, DoctorsForm, DoctorsPage } from "@/pages/Doctors";
 import {
-	AppointmentDetails,
-	AppointmentsForm,
-	AppointmentsPage,
+  AppointmentDetails,
+  AppointmentsForm,
+  AppointmentsPage,
 } from "@/pages/Appointments";
 import Page404 from "@/pages/Page404";
 import {
-	DashboardIcon,
-	PatientsIcon,
-	DoctorsIcon,
-	AppointmentsIcon,
+  DashboardIcon,
+  PatientsIcon,
+  DoctorsIcon,
+  AppointmentsIcon,
 } from "@/layout/components/Icons";
 
 export const routes = [
-	{
-		path: frontRoutes.pages.dashboard,
-		Component: MainLayout,
-		children: [
-			{
-				index: true,
-				Component: DashboardPage,
-				meta: {
-					labelForMainMenu: "Дашборд",
-					icon: DashboardIcon,
-				},
-			},
-			{
-				path: frontRoutes.pages.patients.base,
-				children: [
-					{
-						index: true,
-						Component: PatientsPage,
-						meta: {
-							labelForMainMenu: "Пацієнти",
-							icon: PatientsIcon,
-						},
-					},
-					{
-						path: frontRoutes.pages.patients.edit,
-						Component: PatientsForm,
-					},
-					{
-						path: frontRoutes.pages.patients.details,
-						Component: PatientDetails,
-					},
-				],
-			},
-			{
-				path: frontRoutes.pages.doctors.base,
-				children: [
-					{
-						index: true,
-						Component: DoctorsPage,
-						meta: {
-							labelForMainMenu: "Лікарі",
-							icon: DoctorsIcon,
-						},
-					},
-					{
-						path: frontRoutes.pages.doctors.edit,
-						Component: DoctorsForm,
-					},
-					{
-						path: frontRoutes.pages.doctors.details,
-						Component: DoctorDetails,
-					},
-				],
-			},
-			{
-				path: frontRoutes.pages.appointments.base,
-				children: [
-					{
-						index: true,
-						Component: AppointmentsPage,
-						meta: {
-							labelForMainMenu: "Прийоми",
-							icon: AppointmentsIcon,
-						},
-					},
-					{
-						path: frontRoutes.pages.appointments.edit,
-						Component: AppointmentsForm,
-					},
-					{
-						path: frontRoutes.pages.appointments.details,
-						Component: AppointmentDetails,
-					},
-				],
-			},
-		],
-	},
-	{
-		path: "*",
-		Component: Page404,
-	},
+  {
+    path: frontRoutes.pages.dashboard,
+    Component: MainLayout,
+    children: [
+      {
+        index: true,
+        Component: DashboardPage,
+        meta: {
+          labelForMainMenu: "Дашборд",
+          icon: DashboardIcon,
+        },
+      },
+      {
+        path: frontRoutes.pages.patients.base,
+        children: [
+          {
+            index: true,
+            Component: PatientsPage,
+            meta: {
+              labelForMainMenu: "Пацієнти",
+              icon: PatientsIcon,
+            },
+          },
+          {
+            path: frontRoutes.pages.patients.edit,
+            Component: PatientsForm,
+          },
+          {
+            path: frontRoutes.pages.patients.details,
+            Component: PatientDetails,
+          },
+        ],
+      },
+      {
+        path: frontRoutes.pages.appointments.base,
+        children: [
+          {
+            index: true,
+            Component: AppointmentsPage,
+            meta: {
+              labelForMainMenu: "Прийоми",
+              icon: AppointmentsIcon,
+            },
+          },
+          {
+            path: frontRoutes.pages.appointments.edit,
+            Component: AppointmentsForm,
+          },
+          {
+            path: frontRoutes.pages.appointments.details,
+            Component: AppointmentDetails,
+          },
+        ],
+      },
+      {
+        path: frontRoutes.pages.doctors.base,
+        children: [
+          {
+            index: true,
+            Component: DoctorsPage,
+            meta: {
+              labelForMainMenu: "Лікарі",
+              icon: DoctorsIcon,
+            },
+          },
+          {
+            path: frontRoutes.pages.doctors.edit,
+            Component: DoctorsForm,
+          },
+          {
+            path: frontRoutes.pages.doctors.details,
+            Component: DoctorDetails,
+          },
+        ],
+      },
+
+    ],
+  },
+  {
+    path: "*",
+    Component: Page404,
+  },
 ];

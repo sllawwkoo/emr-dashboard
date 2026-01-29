@@ -2,26 +2,28 @@ import { ArrowLeftIcon, ArrowRightIcon } from "../Icons";
 import Logo from "../Logo";
 import styles from "./SidebarHeader.module.scss";
 
-function SidebarHeader({ collapsed, onToggle }) {
+function SidebarHeader({ collapsed, isMobile, onToggle }) {
   return (
     <header
-      className={`${styles.header} ${collapsed ? styles.collapsed : ""}`}
+      className={`${styles.header} ${collapsed ? styles.collapsed : ""} ${isMobile ? styles.mobile : ""}`}
     >
       <div className={styles.logoWrap}>
-        <Logo />
+        <Logo collapsed={collapsed} />
       </div>
-      <button
-        type="button"
-        className={styles.toggle}
-        onClick={onToggle}
-        aria-label={collapsed ? "Розгорнути бокову панель" : "Згорнути бокову панель"}
-      >
-        {collapsed ? (
-          <ArrowRightIcon size={20} className={styles.toggleIcon} />
-        ) : (
-          <ArrowLeftIcon size={20} className={styles.toggleIcon} />
-        )}
-      </button>
+      {!isMobile && (
+        <button
+          type="button"
+          className={styles.toggle}
+          onClick={onToggle}
+          aria-label={collapsed ? "Розгорнути бокову панель" : "Згорнути бокову панель"}
+        >
+          {collapsed ? (
+            <ArrowRightIcon size={20} className={styles.toggleIcon} />
+          ) : (
+            <ArrowLeftIcon size={20} className={styles.toggleIcon} />
+          )}
+        </button>
+      )}
     </header>
   );
 }

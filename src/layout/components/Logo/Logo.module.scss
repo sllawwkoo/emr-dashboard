@@ -1,12 +1,22 @@
 .wrapper {
-	padding-inline: toRem(15);
-	display: flex;
-	align-items: center;
+  padding-inline: toRem(15);
+  display: flex;
+  align-items: center;
 
-	img {
-		@include adaptiveValue("max-width", 90, 50);
-		width: 100%;
-		height: auto;
-		object-fit: contain;
-	}
+  img {
+    @include adaptiveValue("max-width", 90, 50);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &.collapsed {
+    padding-inline: 0;
+
+    img {
+      max-width: 100%;
+      max-height: toRem(28);
+      width: auto;
+    }
+  }
 }

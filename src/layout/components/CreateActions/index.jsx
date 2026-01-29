@@ -8,12 +8,12 @@ import SidebarAction from "../SidebarAction";
 import styles from "./CreateActions.module.scss";
 
 const ITEMS = [
-  { to: frontRoutes.navigate.patients.create, icon: AddPatientIcon, label: "Створити пацієнта" },
-  { to: frontRoutes.navigate.appointments.create, icon: AddAppointmentIcon, label: "Створити прийом" },
-  { to: frontRoutes.navigate.doctors.create, icon: AddDoctorIcon, label: "Створити лікаря" },
+  { to: frontRoutes.navigate.patients.create, icon: AddPatientIcon, label: "Новий пацієнт" },
+  { to: frontRoutes.navigate.appointments.create, icon: AddAppointmentIcon, label: "Запис на прийом" },
+  { to: frontRoutes.navigate.doctors.create, icon: AddDoctorIcon, label: "Новий лікар" },
 ];
 
-function CreateActions({ collapsed }) {
+function CreateActions({ collapsed, isTouchDevice }) {
   return (
     <div className={styles.block}>
       <ul className={styles.list}>
@@ -25,7 +25,7 @@ function CreateActions({ collapsed }) {
               icon={icon}
               label={label}
               collapsed={collapsed}
-              activeClassName={styles.active}
+              isTouchDevice={isTouchDevice}
             />
           </li>
         ))}

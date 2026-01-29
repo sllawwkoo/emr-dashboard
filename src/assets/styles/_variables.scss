@@ -85,6 +85,10 @@
   --color-hover: var(--bg-row-hover);
   --color-tooltip-bg: var(--bg-surface);
   --color-tooltip-text: var(--text-primary);
+
+  /* active menu item — light theme: stronger contrast */
+  --bg-sidebar-active: #c9d6ed;
+  --color-sidebar-active: var(--brand-primary);
 }
 
 /* ===== DARK THEME ===== */
@@ -152,4 +156,8 @@
   /* brand red accent */
   --accent-danger-soft: #3a1d22;
   /* soft danger bg */
+
+  /* active menu item — dark theme */
+  --bg-sidebar-active: var(--bg-row-selected);
+  --color-sidebar-active: var(--text-primary);
 }

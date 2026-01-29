@@ -4,18 +4,31 @@
   justify-content: space-between;
   gap: toRem(8);
   padding-inline: toRem(12);
-  padding-bottom: toRem(12);
+  padding-block: toRem(14);
   flex-shrink: 0;
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: toRem(2) solid var(--border-soft);
 
   &.collapsed {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(8);
+
     .logoWrap {
-      display: none;
+      flex: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
     }
 
     .toggle {
-      margin-inline: auto;
+      flex-shrink: 0;
     }
+  }
+
+  &.mobile .toggle {
+    display: none;
   }
 }
 

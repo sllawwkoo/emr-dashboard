@@ -1,6 +1,8 @@
 .block {
   display: flex;
   flex-direction: column;
+  border-bottom: toRem(2) solid var(--border-soft);
+  padding-block: toRem(14);
 }
 
 .list {
@@ -17,5 +19,6 @@
 }
 
 .active {
-  background-color: var(--bg-row-selected) !important;
+  background-color: var(--bg-sidebar-active) !important;
+  color: var(--color-sidebar-active);
 }

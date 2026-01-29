@@ -1,10 +1,26 @@
 .footer {
   display: flex;
   flex-direction: column;
-  gap: toRem(8);
+  align-items: stretch;
+  gap: toRem(10);
   padding-inline: toRem(12);
-  padding-top: toRem(12);
+  padding-block: toRem(12);
   margin-top: auto;
   flex-shrink: 0;
-  border-top: 1px solid var(--border-soft);
+  border-top: toRem(2) solid var(--border-soft);
+}
+
+
+.footer>*:last-child {
+  margin-left: toRem(12);
+}
+
+.footer.collapsed {
+  align-items: center;
+  padding-block: toRem(10);
+}
+
+
+.footer.collapsed>*:last-child {
+  margin-left: 0;
 }

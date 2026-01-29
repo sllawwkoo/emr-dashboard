@@ -3,7 +3,7 @@ import { routes } from "@/routes/routes";
 import SidebarAction from "../SidebarAction";
 import styles from "./MainMenu.module.scss";
 
-function MainMenu({ collapsed }) {
+function MainMenu({ collapsed, isTouchDevice }) {
   const items = getItemsForMainMenu(routes, "");
 
   return (
@@ -13,10 +13,11 @@ function MainMenu({ collapsed }) {
           <li key={path || i} className={styles.item}>
             <SidebarAction
               to={path}
-              end={path === "/"}
+              end
               icon={icon}
               label={label}
               collapsed={collapsed}
+              isTouchDevice={isTouchDevice}
               activeClassName={styles.active}
             />
           </li>
