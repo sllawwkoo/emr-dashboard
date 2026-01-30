@@ -23,6 +23,7 @@
   display: inline-block;
   transition: width var(--tr-base), height var(--tr-base);
   will-change: width, height;
+  cursor: pointer;
 }
 
 /* Ховаємо реальний чекбокс */

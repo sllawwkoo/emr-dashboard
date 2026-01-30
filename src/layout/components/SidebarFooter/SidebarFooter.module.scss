@@ -2,22 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: toRem(10);
-  padding-inline: toRem(12);
-  padding-block: toRem(12);
+  @include adaptiveValue("gap", 10, 8);
+  @include adaptiveValue("padding-inline", 12, 10);
+  @include adaptiveValue("padding-block", 12, 10);
   margin-top: auto;
   flex-shrink: 0;
   border-top: toRem(2) solid var(--border-soft);
 }
 
+.footer > *:last-child {
+  @include adaptiveValue("margin-left", 20, 8);
 
-.footer>*:last-child {
-  margin-left: toRem(12);
 }
 
 .footer.collapsed {
   align-items: center;
-  padding-block: toRem(10);
+  @include adaptiveValue("padding-block", 10, 6);
 }
 
 

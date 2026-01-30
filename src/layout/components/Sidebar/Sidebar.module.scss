@@ -1,5 +1,5 @@
 .sidebar {
-  --sidebar-width: #{toRem(220)};
+  --sidebar-width: #{toRem(250)};
   --sidebar-width-collapsed: #{toRem(72)};
 
   position: sticky;
@@ -11,12 +11,23 @@
   max-height: 100vh;
   background-color: var(--bg-sidebar);
   overflow: hidden;
-  padding-block: toRem(16);
+  @include adaptiveValue("padding-block", 16, 10);
   transition: width var(--tr-slow), min-width var(--tr-slow);
+  will-change: width, min-width;
 
   &.collapsed {
     width: var(--sidebar-width-collapsed);
     min-width: var(--sidebar-width-collapsed);
+
+    @media (max-width: 767.98px) {
+      width: toRem(62);
+     min-width: toRem(62);
+    }
+
+    @media (max-width: 479.98px) {
+      width: toRem(52);
+     min-width: toRem(52);
+    }
   }
 }
 
@@ -27,6 +38,7 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  gap: toRem(8);
-  padding: toRem(8) toRem(12);
+  @include adaptiveValue("gap", 8, 6);
+  @include adaptiveValue("padding-block", 8, 6);
+  @include adaptiveValue("padding-inline", 12, 10);
 }
