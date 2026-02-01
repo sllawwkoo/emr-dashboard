@@ -32,6 +32,12 @@
   /* cards, forms, modals */
   --bg-surface-soft: #f8fafc;
   /* nested blocks */
+  --bg-header: #f1f5f9;
+  /* page header block (banner) */
+  --border-header-accent: var(--brand-primary);
+
+  /* ===== SHADOWS ===== */
+  --shadow-header: 0 2px 8px rgba(15, 33, 71, 0.06);
 
   /* ===== LISTS / ITEMS ===== */
   --bg-row: transparent;
@@ -103,6 +109,12 @@
   /* cards, forms, modals */
   --bg-surface-soft: #21293d;
   /* nested blocks */
+  --bg-header: #252d45;
+  /* page header block (banner) - lighter than layout for contrast */
+  --border-header-accent: var(--brand-primary);
+
+  /* ===== SHADOWS ===== */
+  --shadow-header: 0 2px 12px rgba(0, 0, 0, 0.3);
 
   /* ===== LISTS / ITEMS ===== */
   --bg-row: transparent;

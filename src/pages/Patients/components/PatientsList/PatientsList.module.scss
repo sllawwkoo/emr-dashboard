@@ -1,0 +1,19 @@
+.wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  margin: 0;
+  padding: 2rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  text-align: center;
+}

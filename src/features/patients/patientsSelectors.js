@@ -5,7 +5,7 @@ import { api } from "@/api";
 // Отримуємо slice стейту, де зберігаються пацієнти
 export const selectPatientsResult = api.endpoints.getPatients.select({
 	page: 1,
-	limit: 1000,
+	limit: 100,
 });
 
 // Отримуємо нормалізовані дані або порожній initial state

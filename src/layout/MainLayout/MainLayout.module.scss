@@ -12,5 +12,12 @@
 	@include adaptiveValue("padding", 50, 15);
 	max-width: toRem(1200);
 	margin: 0 auto;
-	
+
+	@media (min-width: 1400px) {
+		max-width: toRem(1550);
+	}
+
+	@media (min-width: 1800px) {
+		max-width: toRem(1700);
+	}
 }
