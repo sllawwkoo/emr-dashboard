@@ -5,36 +5,37 @@
 .selectLabel {
 	display: block;
 	margin-bottom: toRem(6);
+  color: var(--text-secondary);
 }
 
 .select {
 	width: 100%;
 	padding: toRem(10) toRem(12);
 	border-radius: toRem(8);
-	border: toRem(1) solid #cbd5e1;
+	border: toRem(1) solid var(--input-border-disabled);
 	outline: none;
 	transition:
-		border-color var(--transition-ease-base),
-		box-shadow var(--transition-ease-base);
-	background-color: #ffffff;
-	color: #334155;
+		border-color var(--tr-base),
+		box-shadow var(--tr-base);
+	background-color: var(--bg-surface);
+	color: var(--input-text);
 
 	/* Hover */
-	&:hover:not(.disabledInput):not(.error) {
-		border-color: #94a3b8;
-	}
+	// &:hover:not(.disabledInput):not(.error) {
+	// 	border-color: #94a3b8;
+	// }
 
 	/* Focus */
 	&:focus {
-		border-color: #3b82f6;
-		box-shadow: 0 0 0 toRem(3) rgba(59, 130, 246, 0.2);
+		border-color: var(--input-border-hover);
+		box-shadow: var(--input-focus-ring);
 	}
 
 	/* Disabled */
 	&.disabledInput {
-		background-color: #f1f5f9;
-		border-color: #cbd5e1;
-		color: #94a3b8;
+		background-color: var(--input-bg-disabled);
+		border-color: var(--input-border-disabled);
+		color: var(--input-placeholder);
 		cursor: not-allowed;
 	}
 }
@@ -46,13 +47,13 @@
 
 /* Error state */
 .error {
-	border-color: #e11d48 !important;
-	box-shadow: 0 0 0 toRem(3) rgba(225, 29, 72, 0.15);
+	border-color: var(--status-error-border) !important;
+	box-shadow: var(--status-error-ring);
 }
 
 /* Error message */
 .errorMessage {
 	margin-top: toRem(4);
-	color: #e11d48;
+	color: var(--status-error-text);
 	font-size: toRem(12);
 }

@@ -2,24 +2,9 @@ import { useParams, useNavigate } from "react-router";
 import Loader from "@/components/Loader";
 import { useGetPatientByIdQuery } from "@/api";
 import styles from "./PatientDetails.module.scss";
+import { formatBirthDate } from "../utils/date";
+import { mapGender } from "../utils/gender";
 
-function formatBirthDate(value) {
-  if (!value) return "—";
-  const date = typeof value === "string" ? new Date(value) : value;
-  if (Number.isNaN(date.getTime())) return "—";
-  const d = date.getDate();
-  const m = date.getMonth() + 1;
-  const y = date.getFullYear();
-  return `${String(d).padStart(2, "0")}.${String(m).padStart(2, "0")}.${y}`;
-}
-
-function mapGender(value) {
-  if (!value) return "—";
-  const normalized = String(value).toLowerCase();
-  if (normalized === "male") return "Чоловіча";
-  if (normalized === "female") return "Жіноча";
-  return "—";
-}
 
 function PatientDetails() {
   const { id } = useParams();
