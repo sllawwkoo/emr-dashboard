@@ -1,0 +1,170 @@
+.page {
+  width: 100%;
+  max-width: toRem(1320);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  @include adaptiveValue("padding-top", 24, 12);
+  @include adaptiveValue("padding-bottom", 24, 12);
+}
+
+.card {
+  width: 100%;
+  background: var(--bg-surface);
+  border-radius: toRem(12);
+  box-shadow: var(--shadow-md);
+  @include adaptiveValue("padding-block", 32, 20);
+  @include adaptiveValue("padding-inline", 32, 16);
+}
+
+.cardTitle {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-primary);
+  @include adaptiveValue("font-size", 22, 18);
+  @include adaptiveValue("margin-bottom", 28, 20);
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: toRem(60);
+    height: 2px;
+    margin: toRem(10) auto 0;
+    background: var(--text-primary);
+    border-radius: 1px;
+  }
+}
+
+.error {
+  @include adaptiveValue("padding", 14, 10);
+  color: var(--status-error-text);
+  background: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  border-radius: toRem(6);
+  font-size: 0.9375rem;
+}
+
+.fields {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: minmax(toRem(160), toRem(200)) minmax(0, 1fr);
+  column-gap: toRem(20);
+  row-gap: toRem(2);
+  align-items: baseline;
+  @include adaptiveValue("padding-block", 12, 8);
+  border-bottom: 1px dashed var(--border-soft);
+  transition: background-color var(--tr-fast);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    &:hover {
+      background: var(--bg-row-hover);
+    }
+  }
+}
+
+.fieldLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  @include adaptiveValue("font-size", 13, 12);
+}
+
+.fieldValue {
+  font-weight: 500;
+  color: var(--text-primary);
+  @include adaptiveValue("font-size", 16, 14);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.notesBlock {
+  @include adaptiveValue("margin-top", 24, 18);
+  background: var(--bg-surface-soft);
+  border-radius: toRem(8);
+  @include adaptiveValue("padding", 20, 14);
+}
+
+.notesLabel {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  @include adaptiveValue("font-size", 12, 11);
+  @include adaptiveValue("margin-bottom", 8, 6);
+}
+
+.notes {
+  margin: 0;
+  white-space: pre-line;
+  color: var(--text-primary);
+  line-height: 1.5;
+  @include adaptiveValue("font-size", 15, 14);
+}
+
+.backWrap {
+  @include adaptiveValue("margin-top", 28, 20);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: toRem(6);
+  border: 1px solid var(--bg-button-primary);
+  background: transparent;
+  color: var(--bg-button-primary);
+  cursor: pointer;
+  font-weight: 600;
+  @include adaptiveValue("padding-block", 12, 10);
+  @include adaptiveValue("padding-inline", 16, 12);
+  @include adaptiveValue("font-size", 15, 13);
+  transition:
+    background-color var(--tr-fast),
+    border-color var(--tr-fast),
+    color var(--tr-fast);
+
+  &:hover {
+    background: var(--bg-button-primary);
+    color: var(--text-on-dark);
+    border-color: var(--bg-button-primary);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    width: 100%;
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+    row-gap: toRem(4);
+  }
+}
+
+@media (max-width: 479.98px) {
+  .page {
+    @include adaptiveValue("padding-top", 12, 8);
+    @include adaptiveValue("padding-bottom", 12, 8);
+  }
+
+  .card {
+    @include adaptiveValue("padding-inline", 16, 12);
+  }
+}
