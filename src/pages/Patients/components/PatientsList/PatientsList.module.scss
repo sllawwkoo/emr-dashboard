@@ -1,13 +1,15 @@
 .wrapper {
   background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: 0.5rem;
+  // border: 1px solid var(--border-default);
+  border-radius: toRem(8);
   overflow: hidden;
+  @include adaptiveValue("padding", 16, 10);
 }
 
 .list {
   display: flex;
   flex-direction: column;
+  gap: toRem(16);
 }
 
 .empty {

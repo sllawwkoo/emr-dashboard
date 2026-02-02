@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router";
 import SearchInput from "@/components/SearchInput";
+import HeaderPage from "@/components/HeaderPage";
 import Pagination from "@/components/Pagination";
 import Modal from "@/components/Modal";
 import Loader from "@/components/Loader";
@@ -11,6 +12,7 @@ import {
   useGetFilteredByPatientNameQuery,
   useDeletePatientsMutation,
 } from "@/api";
+import { pageHeaders } from "@/utils/pageHeaders.config";
 import styles from "./PatientsPage.module.scss";
 
 function PatientsPage() {
@@ -22,7 +24,7 @@ function PatientsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [patientToDelete, setPatientToDelete] = useState(null);
 
-  const limit = 10;
+  const limit = 5;
   const isSearchMode = debouncedSearch.trim() !== "";
 
   // 🔹 PRIMARY QUERY — БЕЗ skip
@@ -96,15 +98,11 @@ function PatientsPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>Пацієнти</h1>
-        <p className={styles.description}>
-          Список усіх пацієнтів медичної системи
-        </p>
-        <p className={styles.helperText}>
-          Тут ви можете переглядати, шукати та керувати картками пацієнтів
-        </p>
-      </div>
+      <HeaderPage
+        title={pageHeaders.patients.title}
+        description={pageHeaders.patients.description}
+        helperText={pageHeaders.patients.helperText}
+      />
 
       <div className={styles.content}>
         <div className={styles.toolbar}>

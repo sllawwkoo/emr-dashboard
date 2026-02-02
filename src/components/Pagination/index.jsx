@@ -30,8 +30,8 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
         onClick={handlePrev}
         aria-label="Попередня сторінка"
       >
-        <ArrowLeftIcon size={18} />
-        Попередня
+        <ArrowLeftIcon size={18} className={styles.buttonIcon}/>
+        <span className={styles.buttonText}>Попередня</span>
       </button>
 
       <span className={styles.label}>
@@ -45,8 +45,8 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
         onClick={handleNext}
         aria-label="Наступна сторінка"
       >
-        Наступна
-        <ArrowRightIcon size={18} />
+        <span className={styles.buttonText}>Наступна</span>
+        <ArrowRightIcon size={18} className={styles.buttonIcon} />
       </button>
     </div>
   );

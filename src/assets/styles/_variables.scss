@@ -69,6 +69,17 @@
   --border-soft: #edf1f7;
   /* soft divider */
 
+  /* ===== INPUTS / SEARCH ===== */
+  --input-border-hover: #d5dde9;
+  --input-border-focus: var(--brand-primary);
+  --input-focus-ring: 0 0 0 3px rgba(15, 33, 71, 0.16);
+  --input-bg-disabled: #eef2f7;
+  --input-border-disabled: #dde3f0;
+  --input-icon: var(--text-secondary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-disabled);
+  --input-clear-hover: var(--accent-danger);
+
   /* ===== STATUS ===== */
   --status-success-bg: #ecfdf3;
   --status-success-border: #bbf7d0;
@@ -149,6 +160,17 @@
   /* default border */
   --border-soft: #2f3a56;
   /* soft divider */
+
+  /* ===== INPUTS / SEARCH ===== */
+  --input-border-hover: #384465;
+  --input-border-focus: var(--bg-button-primary);
+  --input-focus-ring: 0 0 0 3px rgba(90, 122, 224, 0.45);
+  --input-bg-disabled: #171c2b;
+  --input-border-disabled: #303a59;
+  --input-icon: var(--text-secondary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-disabled);
+  --input-clear-hover: var(--accent-danger);
 
   /* ===== STATUS ===== */
   --status-success-bg: #052e16;
