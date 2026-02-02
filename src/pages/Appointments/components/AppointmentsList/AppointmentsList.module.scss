@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border-radius: toRem(8);
+  overflow: hidden;
+  @include adaptiveValue("gap", 0, 0);
+}
+
+.header {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr 0.8fr 1fr;
+  @include adaptiveValue("gap", 12, 8);
+  @include adaptiveValue("padding-inline", 20, 12);
+  @include adaptiveValue("padding-block", 14, 10);
+  @include adaptiveValue("font-size", 14, 12);
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface-soft);
+  border-bottom: 1px solid var(--border-soft);
+
+  @media (min-width: 992px) {
+    display: grid;
+  }
+}
+
+.cellPatient,
+.cellDoctor,
+.cellDateTime,
+.cellReason,
+.cellStatus,
+.cellActions {
+  min-width: 0;
+}
+
+.cellActions {
+  text-align: right;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(12);
+
+  @media (min-width: 992px) {
+    gap: 0;
+  }
+}

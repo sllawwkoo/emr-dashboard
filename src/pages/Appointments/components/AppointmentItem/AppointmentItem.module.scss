@@ -1,0 +1,176 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(8);
+  @include adaptiveValue("padding-inline", 16, 12);
+  @include adaptiveValue("padding-block", 14, 12);
+  background: var(--bg-row);
+  border: 1px solid var(--border-soft);
+  border-radius: toRem(8);
+  transition: background-color var(--tr-fast);
+
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr 0.8fr 1fr;
+    align-items: center;
+    gap: toRem(12);
+    min-height: toRem(52);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  &:hover {
+    background: var(--bg-row-hover);
+  }
+}
+
+.label {
+  display: block;
+  @include adaptiveValue("font-size", 12, 11);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: toRem(2);
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.value {
+  @include adaptiveValue("font-size", 15, 14);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.cellPatient,
+.cellDoctor,
+.cellDateTime,
+.cellReason,
+.cellStatus,
+.cellActions {
+  min-width: 0;
+}
+
+.cellStatus {
+  @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cellActions {
+  @media (min-width: 992px) {
+    justify-self: end;
+  }
+}
+
+.statusBlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: toRem(8);
+}
+
+.badge {
+  display: inline-block;
+  @include adaptiveValue("padding-inline", 10, 8);
+  @include adaptiveValue("padding-block", 4, 3);
+  @include adaptiveValue("font-size", 13, 12);
+  font-weight: 500;
+  border-radius: toRem(4);
+  line-height: 1.3;
+}
+
+.badge_scheduled {
+  color: var(--status-warning-text);
+  background: var(--status-warning-bg);
+  border: 1px solid var(--status-warning-border);
+}
+
+.badge_active {
+  color: var(--status-success-text);
+  background: var(--status-success-bg);
+  border: 1px solid var(--status-success-border);
+}
+
+.badge_completed {
+  color: var(--text-secondary);
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-soft);
+}
+
+.statusBtn {
+  @include adaptiveValue("padding-inline", 10, 8);
+  @include adaptiveValue("padding-block", 6, 5);
+  @include adaptiveValue("font-size", 13, 12);
+  font-weight: 500;
+  color: var(--bg-button-primary);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: toRem(4);
+  cursor: pointer;
+  transition: background-color var(--tr-fast), border-color var(--tr-fast);
+
+  &:hover {
+    background: var(--bg-row-hover);
+    border-color: var(--input-border-hover);
+  }
+
+  @media (max-width: 767.98px) {
+    padding-block: toRem(10);
+    padding-inline: toRem(14);
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include adaptiveValue("gap", 10, 8);
+
+  @media (max-width: 767.98px) {
+    gap: toRem(12);
+
+    .actionBtn,
+    .actionBtnDanger {
+      flex: 1 1 auto;
+      padding-block: toRem(12);
+      padding-inline: toRem(16);
+    }
+  }
+}
+
+.actionBtn,
+.actionBtnDanger {
+  @include adaptiveValue("padding-block", 8, 6);
+  @include adaptiveValue("padding-inline", 14, 10);
+  @include adaptiveValue("font-size", 14, 12);
+  font-weight: 500;
+  border-radius: toRem(4);
+  cursor: pointer;
+  transition: background-color var(--tr-fast), border-color var(--tr-fast),
+    color var(--tr-fast);
+}
+
+.actionBtn {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+
+  &:hover {
+    background: var(--bg-row-hover);
+    border-color: var(--border-soft);
+  }
+}
+
+.actionBtnDanger {
+  color: var(--text-on-dark);
+  background: var(--bg-button-danger);
+  border: 1px solid transparent;
+
+  &:hover {
+    background: var(--bg-button-danger-hover);
+  }
+}

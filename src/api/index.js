@@ -10,7 +10,7 @@ export const api = createApi({
   }),
   tagTypes: ["Patients", "Appointments", "Doctors"],
   endpoints: (builder) => ({
-    // Пацієнти
+    //===== ПАЦІЄНТИ =====//
     // Отримання пацієнтів
     getPatients: builder.query({
       query: ({ page = 1, limit = 5 } = {}) =>
@@ -72,8 +72,8 @@ export const api = createApi({
       ],
     }),
 
-    // Записи
-    // Отримання записів
+    //===== ПРИЙОМИ =====//
+    // Отримання всіх прийомів
     getAllAppointments: builder.query({
       query: ({ page = 1, limit = 5 } = {}) =>
         apiRoutes.appointments.getPaginated(page, limit),
@@ -88,17 +88,17 @@ export const api = createApi({
       }),
       providesTags: ["Appointments"],
     }),
-    // Фільтрування записів по імені пацієнта
+    // Фільтрування прийомів по імені пацієнта
     getFilteredAppointmentsByPatientName: builder.query({
       query: (name) => apiRoutes.appointments.filterByPatientName(name),
       providesTags: ["Appointments"],
     }),
-    // Фільтрування записів по даті
+    // Фільтрування прийомів по даті
     getFilteredAppointmentsByDate: builder.query({
       query: (date) => apiRoutes.appointments.filterByDate(date),
       providesTags: ["Appointments"],
     }),
-    // Видалення запису по id
+    // Видалення прийому по id
     deleteAppointment: builder.mutation({
       query: (id) => ({
         url: apiRoutes.appointments.delete(id),
@@ -109,12 +109,12 @@ export const api = createApi({
         { type: "Appointments", id },
       ],
     }),
-    // Отримання запису по id
+    // Отримання прийому по id
     getAppointmentById: builder.query({
       query: (id) => apiRoutes.appointments.getById(id),
       providesTags: (result, error, id) => [{ type: "Appointments", id }],
     }),
-    // Оновлення запису після редагування
+    // Оновлення прийому після редагування
     updateAppointment: builder.mutation({
       query: ({ id, ...data }) => ({
         url: apiRoutes.appointments.update(id),
@@ -126,7 +126,7 @@ export const api = createApi({
         { type: "Appointments", id },
       ],
     }),
-    // Додавання нового пацієнту
+    // Додавання нового прийому
     addNewAppointment: builder.mutation({
       query: (data) => ({
         url: apiRoutes.appointments.create,
@@ -136,7 +136,7 @@ export const api = createApi({
       invalidatesTags: ["Appointments"],
     }),
 
-    // Лікарі
+    //===== ЛІКАРІ =====//
     // Отримання лікарів
     getDoctors: builder.query({
       query: ({ page = 1, limit = 5 } = {}) =>

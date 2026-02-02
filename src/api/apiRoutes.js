@@ -31,9 +31,12 @@ const apiRoutes = {
   doctors: {
     base: "/admin/doctors",
     getAll: "/admin/doctors",
+    getById: (id) => `/admin/doctors/${id}`,
     create: "/admin/doctors",
     update: (id) => `/admin/doctors/${id}`,
     delete: (id) => `/admin/doctors/${id}`,
+    getPaginated: (page = 1, limit = 5) =>
+      `/admin/doctors?page=${page}&limit=${limit}`,
   },
 };
 

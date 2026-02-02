@@ -1,0 +1,106 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 20, 12);
+  @include adaptiveValue("padding-top", 8, 4);
+
+  @media (max-width: 767.98px) {
+    gap: toRem(16);
+  }
+
+  @media (max-width: 479.98px) {
+    gap: toRem(12);
+  }
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include adaptiveValue("gap", 20, 14);
+
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: toRem(12);
+  }
+}
+
+.addButton {
+  flex: 1 1 20%;
+  @include adaptiveValue("padding-block", 14, 10);
+  @include adaptiveValue("padding-inline", 16, 12);
+  @include adaptiveValue("font-size", 16, 12);
+  font-weight: 500;
+  color: var(--text-on-dark);
+  background: var(--bg-button-primary);
+  border: none;
+  border-radius: toRem(6);
+  cursor: pointer;
+  transition: background-color var(--tr-fast);
+
+  &:hover {
+    background: var(--bg-button-primary-hover);
+  }
+}
+
+.dateFilterLabel {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue("gap", 8, 6);
+}
+
+.dateFilterText {
+  font-size: toRem(14);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.dateFilterInput {
+  @include adaptiveValue("padding-block", 10, 8);
+  @include adaptiveValue("padding-inline", 12, 10);
+  @include adaptiveValue("font-size", 14, 12);
+  color: var(--input-text);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: toRem(6);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--input-border-hover);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+    box-shadow: var(--input-focus-ring);
+  }
+}
+
+.empty {
+  padding: toRem(16);
+  font-size: toRem(15);
+  color: var(--text-secondary);
+}
+
+.error {
+  padding: 1rem;
+  font-size: 0.9375rem;
+  color: var(--status-error-text);
+  background: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  border-radius: toRem(6);
+}
+
+.paginationWrap {
+  display: flex;
+  justify-content: center;
+  padding-top: toRem(4);
+}
