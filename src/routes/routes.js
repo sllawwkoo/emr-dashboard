@@ -2,9 +2,8 @@ import MainLayout from "@/layout/MainLayout";
 import frontRoutes from "./frontRoutes";
 import DashboardPage from "@/pages/DashboardPage";
 import { PatientDetails, PatientsForm, PatientsPage } from "@/pages/Patients";
-import { DoctorDetails, DoctorsForm, DoctorsPage } from "@/pages/Doctors";
+import { DoctorsForm, DoctorsPage } from "@/pages/Doctors";
 import {
-  AppointmentDetails,
   AppointmentsForm,
   AppointmentsPage,
 } from "@/pages/Appointments";
@@ -65,10 +64,6 @@ export const routes = [
             path: frontRoutes.pages.appointments.edit,
             Component: AppointmentsForm,
           },
-          {
-            path: frontRoutes.pages.appointments.details,
-            Component: AppointmentDetails,
-          },
         ],
       },
       {
@@ -85,10 +80,6 @@ export const routes = [
           {
             path: frontRoutes.pages.doctors.edit,
             Component: DoctorsForm,
-          },
-          {
-            path: frontRoutes.pages.doctors.details,
-            Component: DoctorDetails,
           },
         ],
       },

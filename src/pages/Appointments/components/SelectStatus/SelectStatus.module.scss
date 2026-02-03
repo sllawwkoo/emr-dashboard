@@ -1,0 +1,39 @@
+.select {
+  @include adaptiveValue("padding-inline", 10, 8);
+  @include adaptiveValue("padding-block", 6, 5);
+  @include adaptiveValue("font-size", 13, 12);
+  font-weight: 500;
+  border-radius: toRem(4);
+  border: 1px solid var(--border-soft);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--tr-fast), box-shadow var(--tr-fast);
+  appearance: auto;
+
+  &:focus {
+    box-shadow: var(--input-focus-ring);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.status_scheduled {
+  background: var(--status-warning-bg);
+  border: 1px solid var(--status-warning-border);
+  color: var(--status-warning-text);
+}
+
+.status_active {
+  background: var(--status-success-bg);
+  border: 1px solid var(--status-success-border);
+  color: var(--status-success-text);
+}
+
+.status_completed {
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+}

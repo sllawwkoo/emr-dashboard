@@ -3,10 +3,7 @@ import { doctorsAdapter } from "./doctorsAdapter";
 import { api } from "@/api";
 
 // Отримуємо slice стейту, де зберігаються пацієнти
-export const selectDoctorsResult = api.endpoints.getDoctors.select({
-	page: 1,
-	limit: 1000,
-});
+export const selectDoctorsResult = api.endpoints.getDoctors.select();
 
 // Отримуємо нормалізовані дані або порожній initial state
 const selectDoctorsData = createSelector(

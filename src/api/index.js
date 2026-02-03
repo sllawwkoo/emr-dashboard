@@ -139,22 +139,28 @@ export const api = createApi({
     //===== ЛІКАРІ =====//
     // Отримання лікарів
     getDoctors: builder.query({
-      query: ({ page = 1, limit = 5 } = {}) =>
-        apiRoutes.doctors.getPaginated(page, limit),
-      transformResponse: (response) => ({
-        ...doctorsAdapter.setAll(
-          doctorsAdapter.getInitialState(),
-          response.data,
-        ),
-        meta: {
-          totalPages: response.totalPages,
-          page: response.page,
-          limit: response.limit,
-        },
-      }),
-      providesTags: ["Doctors"],
+      query: () => apiRoutes.doctors.getAll,
+      transformResponse: (response) =>
+        doctorsAdapter.setAll(doctorsAdapter.getInitialState(), response),
+      providesTags: (result) =>
+        result?.ids
+          ? [
+            { type: "Doctors", id: "LIST" },
+            ...result.ids.map((id) => ({ type: "Doctors", id })),
+          ]
+          : [{ type: "Doctors", id: "LIST" }],
     }),
-    // Видалення лікарів
+
+    // Оновлення лікаря після редагування
+    updateDoctor: builder.mutation({
+      query: ({ id, ...data }) => ({
+        url: apiRoutes.doctors.update(id),
+        method: 'PUT',
+        body: data
+      }),
+      invalidatesTags: (result, error, id) => ['Doctors', { type: 'Doctors', id }]
+    }),
+    // Видалення лікаря по id
     deleteDoctors: builder.mutation({
       query: (id) => ({
         url: apiRoutes.doctors.delete(id),
@@ -165,23 +171,7 @@ export const api = createApi({
         { type: "Doctors", id },
       ],
     }),
-    // Отримання лікаря по id
-    getDoctorById: builder.query({
-      query: (id) => apiRoutes.doctors.getById(id),
-      providesTags: (result, error, id) => [{ type: "Doctors", id }],
-    }),
-    // Оновлення лікаря після редагування
-    updateDoctor: builder.mutation({
-      query: ({ id, ...data }) => ({
-        url: apiRoutes.doctors.update(id),
-        method: "PUT",
-        body: data,
-      }),
-      invalidatesTags: (result, error, id) => [
-        "Doctors",
-        { type: "Doctors", id },
-      ],
-    }),
+
     // Додавання нового лікаря
     addNewDoctor: builder.mutation({
       query: (data) => ({
@@ -213,7 +203,6 @@ export const {
   // Лікарі
   useGetDoctorsQuery,
   useDeleteDoctorsMutation,
-  useGetDoctorByIdQuery,
   useAddNewDoctorMutation,
   useUpdateDoctorMutation,
 } = api;

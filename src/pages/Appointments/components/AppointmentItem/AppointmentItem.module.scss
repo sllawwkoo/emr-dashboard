@@ -9,9 +9,9 @@
   border-radius: toRem(8);
   transition: background-color var(--tr-fast);
 
-  @media (min-width: 992px) {
+  @media (min-width: 991.98px) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1.5fr 0.8fr 1fr;
+    grid-template-columns: 1fr 1fr 0.8fr 1.2fr 0.8fr 1.2fr;
     align-items: center;
     gap: toRem(12);
     min-height: toRem(52);
@@ -28,12 +28,12 @@
 
 .label {
   display: block;
-  @include adaptiveValue("font-size", 12, 11);
+  @include adaptiveValue("font-size", 14, 10);
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: toRem(2);
 
-  @media (min-width: 992px) {
+  @media (min-width: 991.98px) {
     display: none;
   }
 }
@@ -54,15 +54,16 @@
 }
 
 .cellStatus {
-  @media (min-width: 992px) {
+  @media (min-width: 991.98px) {
     display: flex;
     align-items: center;
   }
 }
 
 .cellActions {
-  @media (min-width: 992px) {
-    justify-self: end;
+  @media (min-width: 991.98px) {
+    justify-self: center;
+    width: 100%;
   }
 }
 
@@ -73,61 +74,11 @@
   gap: toRem(8);
 }
 
-.badge {
-  display: inline-block;
-  @include adaptiveValue("padding-inline", 10, 8);
-  @include adaptiveValue("padding-block", 4, 3);
-  @include adaptiveValue("font-size", 13, 12);
-  font-weight: 500;
-  border-radius: toRem(4);
-  line-height: 1.3;
-}
-
-.badge_scheduled {
-  color: var(--status-warning-text);
-  background: var(--status-warning-bg);
-  border: 1px solid var(--status-warning-border);
-}
-
-.badge_active {
-  color: var(--status-success-text);
-  background: var(--status-success-bg);
-  border: 1px solid var(--status-success-border);
-}
-
-.badge_completed {
-  color: var(--text-secondary);
-  background: var(--bg-surface-soft);
-  border: 1px solid var(--border-soft);
-}
-
-.statusBtn {
-  @include adaptiveValue("padding-inline", 10, 8);
-  @include adaptiveValue("padding-block", 6, 5);
-  @include adaptiveValue("font-size", 13, 12);
-  font-weight: 500;
-  color: var(--bg-button-primary);
-  background: transparent;
-  border: 1px solid var(--border-default);
-  border-radius: toRem(4);
-  cursor: pointer;
-  transition: background-color var(--tr-fast), border-color var(--tr-fast);
-
-  &:hover {
-    background: var(--bg-row-hover);
-    border-color: var(--input-border-hover);
-  }
-
-  @media (max-width: 767.98px) {
-    padding-block: toRem(10);
-    padding-inline: toRem(14);
-  }
-}
 
 .actions {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   @include adaptiveValue("gap", 10, 8);
 
   @media (max-width: 767.98px) {
@@ -144,9 +95,10 @@
 
 .actionBtn,
 .actionBtnDanger {
+  flex: 1 1 48%;
   @include adaptiveValue("padding-block", 8, 6);
-  @include adaptiveValue("padding-inline", 14, 10);
-  @include adaptiveValue("font-size", 14, 12);
+  @include adaptiveValue("padding-inline", 16, 8);
+  @include adaptiveValue("font-size", 16, 10);
   font-weight: 500;
   border-radius: toRem(4);
   cursor: pointer;

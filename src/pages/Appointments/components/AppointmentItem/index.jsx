@@ -1,26 +1,6 @@
 import styles from "./AppointmentItem.module.scss";
-
-const STATUS_LABELS = {
-  scheduled: "Заплановано",
-  active: "Активний",
-  completed: "Завершено",
-};
-
-function formatDateTime(value) {
-  if (!value) return "—";
-  const date = typeof value === "string" ? new Date(value) : value;
-  if (Number.isNaN(date.getTime())) return "—";
-  const d = String(date.getDate()).padStart(2, "0");
-  const m = String(date.getMonth() + 1).padStart(2, "0");
-  const y = date.getFullYear();
-  const h = String(date.getHours()).padStart(2, "0");
-  const min = String(date.getMinutes()).padStart(2, "0");
-  return `${d}.${m}.${y} ${h}:${min}`;
-}
-
-function getStatusLabel(status) {
-  return STATUS_LABELS[status] ?? status ?? "—";
-}
+import { formatDateTime } from "../../utils/helpers";
+import SelectStatus from "../SelectStatus";
 
 function AppointmentItem({
   appointment,
@@ -32,15 +12,9 @@ function AppointmentItem({
 }) {
   const { id, date, reason, status } = appointment ?? {};
   const formattedDateTime = formatDateTime(date);
-  const statusLabel = getStatusLabel(status);
 
   const handleEdit = () => onEdit?.(id);
   const handleDelete = () => onDelete?.(appointment);
-  const handleStart = () => onStatusChange?.(id, "active");
-  const handleComplete = () => onStatusChange?.(id, "completed");
-
-  const showStartButton = status === "scheduled";
-  const showCompleteButton = status === "active";
 
   return (
     <div className={styles.row} role="row">
@@ -63,32 +37,10 @@ function AppointmentItem({
       <div className={styles.cellStatus}>
         <span className={styles.label}>Статус</span>
         <div className={styles.statusBlock}>
-          <span
-            className={`${styles.badge} ${styles[`badge_${status}`]}`}
-            data-status={status}
-          >
-            {statusLabel}
-          </span>
-          {showStartButton && (
-            <button
-              type="button"
-              className={styles.statusBtn}
-              onClick={handleStart}
-              aria-label="Розпочати прийом"
-            >
-              Розпочати
-            </button>
-          )}
-          {showCompleteButton && (
-            <button
-              type="button"
-              className={styles.statusBtn}
-              onClick={handleComplete}
-              aria-label="Завершити прийом"
-            >
-              Завершити
-            </button>
-          )}
+          <SelectStatus
+            value={status}
+            onChange={(newStatus) => onStatusChange?.(id, newStatus)}
+          />
         </div>
       </div>
       <div className={styles.cellActions}>

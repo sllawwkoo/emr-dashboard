@@ -2,16 +2,8 @@ import { useMemo } from "react";
 import AppointmentItem from "../AppointmentItem";
 import { useGetPatientsQuery, useGetDoctorsQuery } from "@/api";
 import styles from "./AppointmentsList.module.scss";
+import { buildIdToNameMap } from "../../utils/helpers";
 
-function buildIdToNameMap(entitiesData) {
-  if (!entitiesData?.ids || !entitiesData?.entities) return {};
-  const map = {};
-  entitiesData.ids.forEach((id) => {
-    const entity = entitiesData.entities[id];
-    if (entity?.fullName != null) map[id] = entity.fullName;
-  });
-  return map;
-}
 
 function AppointmentsList({
   appointments = [],
@@ -20,7 +12,7 @@ function AppointmentsList({
   onStatusChange,
 }) {
   const { data: patientsData } = useGetPatientsQuery({ page: 1, limit: 500 });
-  const { data: doctorsData } = useGetDoctorsQuery({ page: 1, limit: 500 });
+  const { data: doctorsData } = useGetDoctorsQuery();
 
   const patientNameMap = useMemo(
     () => buildIdToNameMap(patientsData),

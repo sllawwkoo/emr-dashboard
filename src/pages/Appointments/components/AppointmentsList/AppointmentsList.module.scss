@@ -9,7 +9,7 @@
 
 .header {
   display: none;
-  grid-template-columns: 1fr 1fr 1fr 1.5fr 0.8fr 1fr;
+  grid-template-columns: 1fr 1fr 0.8fr 1.2fr 0.8fr 1.2fr;
   @include adaptiveValue("gap", 12, 8);
   @include adaptiveValue("padding-inline", 20, 12);
   @include adaptiveValue("padding-block", 14, 10);
@@ -19,7 +19,7 @@
   background: var(--bg-surface-soft);
   border-bottom: 1px solid var(--border-soft);
 
-  @media (min-width: 992px) {
+  @media (min-width: 991.98px) {
     display: grid;
   }
 }
@@ -31,10 +31,11 @@
 .cellStatus,
 .cellActions {
   min-width: 0;
+  @include adaptiveValue("padding-inline", 6, 4);
 }
 
 .cellActions {
-  text-align: right;
+  text-align: center;
 }
 
 .list {
@@ -42,7 +43,7 @@
   flex-direction: column;
   gap: toRem(12);
 
-  @media (min-width: 992px) {
+  @media (min-width: 991.98px) {
     gap: 0;
   }
 }
