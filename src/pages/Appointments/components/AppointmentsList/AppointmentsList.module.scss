@@ -4,20 +4,25 @@
   background: var(--bg-surface);
   border-radius: toRem(8);
   overflow: hidden;
-  @include adaptiveValue("gap", 0, 0);
+  @include adaptiveValue("padding", 16, 10);
 }
 
 .header {
   display: none;
-  grid-template-columns: 1fr 1fr 0.8fr 1.2fr 0.8fr 1.2fr;
+  grid-template-columns: 1fr 1fr 0.7fr 0.9fr 0.9fr 1.4fr;
+  align-items: center;
   @include adaptiveValue("gap", 12, 8);
   @include adaptiveValue("padding-inline", 20, 12);
   @include adaptiveValue("padding-block", 14, 10);
-  @include adaptiveValue("font-size", 14, 12);
+  @include adaptiveValue("font-size", 14, 8);
   font-weight: 600;
   color: var(--text-secondary);
-  background: var(--bg-surface-soft);
+  background: var(--bg-header);
   border-bottom: 1px solid var(--border-soft);
+
+  @media (max-width: 1439.98px) {
+    grid-template-columns: 1fr 1fr 0.7fr 0.9fr 1.3fr 1fr;
+  }
 
   @media (min-width: 991.98px) {
     display: grid;
