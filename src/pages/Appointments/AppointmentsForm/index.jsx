@@ -15,27 +15,11 @@ import {
   useUpdateAppointmentMutation,
 } from "@/api";
 import styles from "./AppointmentsForm.module.scss";
-import { schema } from "./schema";
+import { schema } from "./validation";
 import { STATUS_OPTIONS } from "../utils/constants";
+import { appointmentToFormValues } from "../utils/helpers";
 
-function isoToDatetimeLocal(iso) {
-  if (!iso) return "";
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "";
-  const pad = (n) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
-}
 
-function appointmentToFormValues(appointment) {
-  if (!appointment) return null;
-  return {
-    patientId: String(appointment.patientId ?? ""),
-    doctorId: String(appointment.doctorId ?? ""),
-    date: isoToDatetimeLocal(appointment.date),
-    reason: appointment.reason ?? "",
-    status: appointment.status ?? "scheduled",
-  };
-}
 
 function AppointmentsForm() {
   const { id } = useParams();
