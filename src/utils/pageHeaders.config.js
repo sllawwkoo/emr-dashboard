@@ -5,6 +5,11 @@ export const pageHeaders = {
     helperText:
       "Тут ви можете переглядати, шукати та керувати картками пацієнтів",
   },
+  doctors: {
+    title: "Лікарі",
+    description: "Список лікарів клініки",
+    helperText: "Тут ви можете переглядати та керувати лікарями",
+  },
   appointments: {
     title: "Прийоми",
     description: "Список прийомів пацієнтів",

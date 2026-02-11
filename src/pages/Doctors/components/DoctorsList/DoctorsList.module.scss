@@ -1,0 +1,20 @@
+.wrapper {
+  background: var(--bg-surface);
+  border-radius: toRem(8);
+  overflow: hidden;
+  @include adaptiveValue("padding", 16, 10);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  @include adaptiveValue("gap", 16, 12);
+
+  @media (min-width: 767.98px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1199.98px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

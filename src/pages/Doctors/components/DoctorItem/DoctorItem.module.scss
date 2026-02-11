@@ -1,0 +1,168 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  @include adaptiveValue("padding-inline", 20, 14);
+  @include adaptiveValue("padding-block", 18, 12);
+  background: var(--bg-row);
+  border: 1px solid var(--border-soft);
+  border-radius: toRem(8);
+  box-shadow: var(--shadow-header);
+  transition: background-color var(--tr-fast), border-color var(--tr-fast);
+
+  &:hover {
+    background: var(--bg-row-hover);
+    border-color: var(--border-default);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 12, 8);
+  flex: 1 1 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(4);
+}
+
+.name {
+  @include adaptiveValue("font-size", 18, 14);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.specialty {
+  @include adaptiveValue("font-size", 14, 12);
+  font-weight: 500;
+  color: var(--text-specialty);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 6, 4);
+}
+
+.metaItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include adaptiveValue("gap", 10, 8);
+}
+
+.label {
+  @include adaptiveValue("font-size", 13, 11);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.value {
+  @include adaptiveValue("font-size", 14, 12);
+  color: var(--text-primary);
+  text-align: right;
+  max-width: 60%;
+  word-break: break-word;
+
+  @media (max-width: 479.98px) {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+.notesBlock {
+  @include adaptiveValue("margin-top", 8, 6);
+  @include adaptiveValue("padding-top", 8, 6);
+  border-top: 1px dashed var(--border-soft);
+}
+
+.notesLabel {
+  @include adaptiveValue("font-size", 13, 11);
+  color: var(--text-secondary);
+  margin-bottom: toRem(4);
+}
+
+.notesText,
+.notesEmpty {
+  @include adaptiveValue("font-size", 14, 12);
+  line-height: 1.4;
+}
+
+.notesText {
+  color: var(--text-primary);
+}
+
+.notesEmpty {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include adaptiveValue("gap", 12, 8);
+
+  @media (max-width: 479.98px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .actionBtn,
+    .actionBtnDanger {
+      width: 100%;
+      flex: 1 1 100%;
+      padding-block: toRem(12);
+      padding-inline: toRem(16);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    @include adaptiveValue("gap", 12, 10);
+
+    .actionBtn,
+    .actionBtnDanger {
+      flex: 1 1 auto;
+      padding-block: toRem(12);
+      padding-inline: toRem(16);
+    }
+  }
+}
+
+.actionBtn,
+.actionBtnDanger {
+  flex: 1 1 48%;
+  @include adaptiveValue("padding-block", 10, 6);
+  @include adaptiveValue("padding-inline", 16, 12);
+  @include adaptiveValue("font-size", 16, 12);
+  font-weight: 500;
+  border-radius: toRem(4);
+  cursor: pointer;
+  transition: background-color var(--tr-fast), border-color var(--tr-fast),
+    color var(--tr-fast);
+}
+
+.actionBtn {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+
+  &:hover {
+    background: var(--bg-row-hover);
+    border-color: var(--border-soft);
+  }
+}
+
+.actionBtnDanger {
+  color: var(--text-on-dark);
+  background: var(--bg-button-danger);
+  border: 1px solid transparent;
+
+  &:hover {
+    background: var(--bg-button-danger-hover);
+  }
+}
