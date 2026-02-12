@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(8);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-left: 4px solid var(--brand-primary);
+  border-radius: toRem(8);
+  box-shadow: var(--shadow-md);
+  @include adaptiveValue("padding", 20, 14);
+  transition: background-color var(--tr-fast);
+
+  &:hover {
+    background: var(--bg-row-hover);
+  }
+}
+
+.accent_primary {
+  border-left-color: var(--brand-primary);
+}
+
+.accent_accent {
+  border-left-color: var(--brand-accent);
+}
+
+.accent_success {
+  border-left-color: var(--status-success-text);
+}
+
+.accent_warning {
+  border-left-color: var(--status-warning-text);
+}
+
+.title {
+  font-size: toRem(14);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.value {
+  font-weight: 700;
+  color: var(--text-primary);
+  @include adaptiveValue("font-size", 24, 18);
+}

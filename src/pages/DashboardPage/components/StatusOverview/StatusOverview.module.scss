@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(16);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: toRem(8);
+  box-shadow: var(--shadow-md);
+  @include adaptiveValue("padding", 24, 16);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+  @include adaptiveValue("font-size", 18, 16);
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(16);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(6);
+
+  @media (max-width: 479.98px) {
+    gap: toRem(4);
+  }
+}
+
+.labelBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: toRem(14);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.count {
+  font-size: toRem(13);
+  color: var(--text-secondary);
+}
+
+.progress {
+  height: toRem(8);
+  background: var(--bg-surface-soft);
+  border-radius: toRem(4);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: toRem(4);
+  transition: width var(--tr-base);
+}
+
+.fill_warning {
+  background: var(--status-warning-border);
+}
+
+.fill_success {
+  background: var(--status-success-border);
+}
+
+.fill_neutral {
+  background: var(--border-default);
+}

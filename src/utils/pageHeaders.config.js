@@ -1,4 +1,9 @@
 export const pageHeaders = {
+  dashboard: {
+    title: "Дашборд",
+    description: "Огляд системи EMR",
+    helperText: "Статистика, статуси прийомів та найближчі записи",
+  },
   patients: {
     title: "Пацієнти",
     description: "Список усіх пацієнтів медичної системи",
