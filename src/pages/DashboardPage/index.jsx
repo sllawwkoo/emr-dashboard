@@ -11,11 +11,13 @@ import { pageHeaders } from "@/utils/pageHeaders.config";
 import SummaryCard from "./components/SummaryCard";
 import StatusOverview from "./components/StatusOverview";
 import UpcomingList from "./components/UpcomingList";
+import DoctorsLoad from "./components/DoctorsLoad";
+import RecentCompleted from "./components/RecentCompleted";
 import styles from "./DashboardPage.module.scss";
 
 const APPOINTMENTS_LIMIT = 500;
 const PATIENTS_LIMIT = 500;
-const UPCOMING_COUNT = 5;
+const UPCOMING_COUNT = 3;
 
 function DashboardPage() {
   const { data: patientsData, isLoading: isLoadingPatients } =
@@ -56,7 +58,12 @@ function DashboardPage() {
 
     const now = new Date().getTime();
     const sorted = [...items]
-      .filter((a) => a.date && new Date(a.date).getTime() >= now)
+      .filter(
+        (a) =>
+          a.date &&
+          new Date(a.date).getTime() >= now &&
+          a.status === "scheduled"
+      )
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
     const upcomingAppointments = sorted.slice(0, UPCOMING_COUNT);
@@ -130,6 +137,11 @@ function DashboardPage() {
             patientNames={patientNames}
             doctorNames={doctorNames}
           />
+        </section>
+
+        <section className={styles.analyticsGrid}>
+          <DoctorsLoad />
+          <RecentCompleted />
         </section>
       </div>
     </div>
