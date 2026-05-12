@@ -17,14 +17,16 @@ function ThemeProvider({ children }) {
 	 * 2) Якщо так → визначаємо системну тему
 	 * 3) Якщо ні → ставимо light
 	 */
-	const [theme, setTheme] = useState(() => {
-		if (typeof window !== "undefined" && window.matchMedia) {
-			return window.matchMedia("(prefers-color-scheme: dark)").matches
-				? "dark"
-				: "light";
-		}
-		return "light";
-	});
+	// const [theme, setTheme] = useState(() => {
+	// 	if (typeof window !== "undefined" && window.matchMedia) {
+	// 		return window.matchMedia("(prefers-color-scheme: dark)").matches
+	// 			? "dark"
+	// 			: "light";
+	// 	}
+	// 	return "light";
+	// });
+
+  const [theme, setTheme] = useState("dark");
 
 	/**
 	 * ✅ Коли theme змінюється → записуємо її в <html data-theme="">
