@@ -3,7 +3,8 @@ import apiRoutes from "./apiRoutes";
 import { patientsAdapter } from "@/features/patients/patientsAdapter";
 import { doctorsAdapter } from "@/features/doctors/doctorsAdapter";
 
-const API_BASE_URL = "https://emr-dashboard-backend.onrender.com";
+// const API_BASE_URL = "https://emr-dashboard-backend.onrender.com";
+const API_BASE_URL = "https://emr-dashboard-backend-production.up.railway.app/";
 const API_LOCAL_URL = "http://localhost:3000/";
 
 export const api = createApi({
