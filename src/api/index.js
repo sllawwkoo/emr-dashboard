@@ -3,14 +3,12 @@ import apiRoutes from "./apiRoutes";
 import { patientsAdapter } from "@/features/patients/patientsAdapter";
 import { doctorsAdapter } from "@/features/doctors/doctorsAdapter";
 
-const API_BASE_URL2 = "https://emr-dashboard-backend.onrender.com";
-const API_BASE_URL = "https://emr-dashboard-backend-production.up.railway.app/";
-const API_LOCAL_URL = "http://localhost:3000/";
+const baseUrl = import.meta.env.VITE_API_URL;
 
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: API_BASE_URL || API_LOCAL_URL || API_BASE_URL2,
+    baseUrl: baseUrl,
   }),
   tagTypes: ["Patients", "Appointments", "Doctors"],
   endpoints: (builder) => ({
